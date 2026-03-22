@@ -159,7 +159,7 @@ export default function Home() {
           </Float>
 
           {/* Post Processing optimized for mobile */}
-          <EffectComposer disableNormalPass={isMobile}>
+          <EffectComposer enableNormalPass={!isMobile}>
             <Bloom 
               luminanceThreshold={0.5} 
               mipmapBlur 
