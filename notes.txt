@@ -1,0 +1,52 @@
+MINDVIS 3D - PROJECT STUDY NOTES
+--------------------------------------
+Subject: How sound actually travels through the brain (And how we built it)
+Source: YouTube (Neuroscience basics), Research papers, and jamming with Gemini/AI.
+
+OVERALL LOGIC: 
+I realized early on that most visualizers are "dumb." They just make a shape bounce to volume. If I'm building a brain, it has to think like a brain. Sound isn't instant; it's a sequence.
+
+1. THE ENTRY POINT (The "Tail")
+- Research: Sound enters via the Cochlear nerve -> Brainstem (specifically the Medulla/Pons).
+- My Note: This is the raw data. It’s the "vibration" phase.
+- Code Implementation: Built the Brainstem as a central pillar. Stage 1 signals start here. Use Gold/White sparks because the data hasn't been "filtered" by the lobes yet.
+
+2. THE GATEKEEPER (The Thalamus)
+- Research: Signals hit the Medial Geniculate Body (MGB) in the Thalamus.
+- My Note: This is like a network switchboard. It decides what's important.
+- Code Implementation: Placed a "Core" anchor in the middle of the brain. Everything flows through here first before hitting the surface.
+
+3. THE CONSCIOUS EAR (Temporal Lobe / A1)
+- Research: First stop in the cortex is the Primary Auditory Cortex.
+- My Note: This is where you actually *realize* you're hearing a song. 
+- Code Implementation: This is our "Stage 1 End / Stage 2 Start" handoff point. Everything hits the Temporal Lobe before fanning out to the rest of the brain.
+
+4. THE CHAIN REACTION (The "Dispersal")
+This was the hardest part to get right. Sound doesn't just stay in the ear. It spreads:
+- Motor Cortex (Front/Top): Reacts to Rhythm/Bass. (That's why we tap our feet).
+- Amygdala (Deep Core): This is the "Chills" center. Reacts to the Mids (melodies).
+- Prefrontal Cortex (Very Front): This is the "Analyzer." Looks for patterns/complexity. Reacts to Highs.
+- Visual Cortex (Back): Imagery. How we "see" music in our head.
+
+--------------------------------------
+TECHNICAL DISCOVERIES (The "Aha!" moments)
+--------------------------------------
+
+* THE "SUN BRAIN" PROBLEM:
+Originally, I used Additive Blending. It looked like a giant glowing lightbulb. AI pointed out that real tissue blocks light. Switched to standard blending + 0.3 transmission. Looks way more "meaty" and biological now.
+
+* YAKOVLEVIAN TORQUE:
+Human brains aren't symmetrical! The right side is slightly shifted forward. I added a "Torque" multiplier (0.97 vs 1.03) to the math. It’s a tiny detail, but it’s why the model looks "real" instead of like a plastic toy.
+
+* THE GPU BYPASS:
+React is too slow for 60fps audio bars. Use Refs + CSS Variables. Bypasses the virtual DOM. Standard industry trick for high-end dashboards.
+
+* THE "STEREO MIX" HACK:
+Browser security is a nightmare. Chrome blocks us from "listening" to Spotify. Solution: Use the system loopback (Stereo Mix). It tricks the browser into thinking the speakers are a microphone. 
+
+TODO: 
+- Record a video for LinkedIn.
+- Make sure to explain the "Sequential Flow".
+
+- Done.
+- Deployment ready on Vercel. 🚀
